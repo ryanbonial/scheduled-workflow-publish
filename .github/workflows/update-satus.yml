@@ -1,4 +1,4 @@
-name: Build GH Pages
+name: Update status.json
 
 on:
   schedule:
