@@ -25,7 +25,7 @@ jobs:
           git add .
           git commit -m "Updating the status.json file"
       - name: Push changes # push the output folder to your repo
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
