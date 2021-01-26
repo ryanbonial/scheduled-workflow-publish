@@ -1,0 +1,31 @@
+name: Build GH Pages
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm start
+      - name: Commit files # transfer the new html files back into the repository
+        run: |
+          git config --local user.name  ${{ github.actor }}
+          git add .
+          git commit -m "Updating the status.json file"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true

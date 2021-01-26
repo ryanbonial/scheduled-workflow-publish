@@ -1,0 +1,22 @@
+{
+  "name": "scheduled-workflow-publish",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node updateStatus.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanbonial/scheduled-workflow-publish.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanbonial/scheduled-workflow-publish/issues"
+  },
+  "homepage": "https://github.com/ryanbonial/scheduled-workflow-publish#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
